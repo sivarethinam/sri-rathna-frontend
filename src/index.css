@@ -1,0 +1,205 @@
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --gold-dark: #9A7832;
+  --red: #8B1A1A;
+  --red-light: #C0392B;
+  --cream: #FDF8EE;
+  --cream-dark: #F5EDD8;
+  --dark: #1A0A0A;
+  --dark-mid: #2D1515;
+  --text-dark: #2C1810;
+  --text-mid: #5C3D2E;
+  --white: #FFFFFF;
+  --shadow: 0 4px 20px rgba(0,0,0,0.15);
+  --shadow-gold: 0 4px 20px rgba(201,168,76,0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--cream);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+.serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream-dark); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--dark);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(201,168,76,0.5);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--red-light), var(--red));
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Cards */
+.card {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(201,168,76,0.2);
+}
+
+/* Inputs */
+input, select, textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid rgba(201,168,76,0.3);
+  border-radius: 6px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  background: var(--cream);
+  color: var(--text-dark);
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-mid);
+  margin-bottom: 6px;
+}
+
+/* Gold divider */
+.gold-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 24px 0;
+}
+
+/* Ornament */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 20px;
+  letter-spacing: 8px;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 14px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  z-index: 9999;
+  animation: slideIn 0.3s ease;
+  max-width: 350px;
+}
+
+.toast.success {
+  background: linear-gradient(135deg, #2d6a4f, #1b4332);
+  color: white;
+  border-left: 4px solid #52b788;
+}
+
+.toast.error {
+  background: linear-gradient(135deg, var(--red), var(--dark-mid));
+  color: white;
+  border-left: 4px solid var(--gold);
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Loading spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(201,168,76,0.2);
+  border-top: 3px solid var(--gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 1.4rem !important; }
+  h2 { font-size: 1.2rem !important; }
+}
